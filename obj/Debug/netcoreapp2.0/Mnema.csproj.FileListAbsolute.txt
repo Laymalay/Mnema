@@ -1,0 +1,10 @@
+/Users/alina/Mnema/obj/Debug/netcoreapp2.0/Mnema.csproj.CoreCompileInputs.cache
+/Users/alina/Mnema/obj/Debug/netcoreapp2.0/Mnema.AssemblyInfoInputs.cache
+/Users/alina/Mnema/obj/Debug/netcoreapp2.0/Mnema.AssemblyInfo.cs
+/Users/alina/Mnema/bin/Debug/netcoreapp2.0/Mnema.deps.json
+/Users/alina/Mnema/bin/Debug/netcoreapp2.0/Mnema.runtimeconfig.json
+/Users/alina/Mnema/bin/Debug/netcoreapp2.0/Mnema.runtimeconfig.dev.json
+/Users/alina/Mnema/bin/Debug/netcoreapp2.0/Mnema.dll
+/Users/alina/Mnema/bin/Debug/netcoreapp2.0/Mnema.pdb
+/Users/alina/Mnema/obj/Debug/netcoreapp2.0/Mnema.dll
+/Users/alina/Mnema/obj/Debug/netcoreapp2.0/Mnema.pdb
