@@ -18,15 +18,29 @@
 
 <h3>My photos</h3>
 
+@{  int photoCount = Model.Photos.Count();
+    double numberRows = @Math.Ceiling(photoCount/4.0);
+}
 
-<div class="row">
-    @{int i = 1;}
-    @foreach (var photo in Model.Photos)
-        {<div class="column">
-        <img src="@Url.Content(photo.Path)" style="width:100%" onclick="openModal();currentSlide(@(i++))" class="hover-shadow cursor">
+<div>total photos: @photoCount @numberRows</div>
+
+@{int counter = 1;
+    @for(int h=1;h <= numberRows; h++){
+        <div class="row">
+        @for( int i = 1 ; i <=4 ; i++)
+            {
+                @if(counter<photoCount)
+                {
+                <div class="column">
+                <img src="@Url.Content(Model.Photos[counter-1].Path)" style="width:100%;  margin-top: 12px;" onclick="openModal();currentSlide(@(counter++))" class="hover-shadow cursor">
+                </div>
+                }
+            
+            }
         </div>
-        }
-</div>
+    }
+}
+
 
 <div id="myModal" class="modal">
   <span class="close cursor" style="color:white" onclick="closeModal()">&times;</span>
@@ -35,7 +49,7 @@
     @foreach (var photo in Model.Photos)
         {<div class="mySlides">
         <div class="numbertext">@(j++) / @Model.Photos.Count()</div>
-        <img src="@Url.Content(photo.Path)" style="height:500px">
+        <img src="@Url.Content(photo.Path)" style="height:600px">
         </div>
     }
 
@@ -46,12 +60,25 @@
         <p id="caption"></p>
     </div>
 
- @{int k = 1;}
-    @foreach (var photo in Model.Photos)
-        {  <div class="column">
-            <img class="demo cursor" src="@Url.Content(photo.Path)" style="width:100%" onclick="currentSlide(@(k++))" alt="@photo.Description">
-            </div>
-        }
+
+@{
+    int counterSecond = 1;
+    @for( int r=1;r <= numberRows; r++){
+        <div class="row">
+        @for( int k = 1 ; k<=4 ; k++)
+            {
+                @if(counterSecond<photoCount)
+                {
+                <div class="column">
+                <img class="demo cursor" src="@Url.Content(@Model.Photos[(counterSecond-1)].Path)" alt="@Model.Photos[(counterSecond-1)].Description" style="width:100%;  margin-top: 12px;" onclick="currentSlide(@(counterSecond++))">
+                </div>
+                }
+            
+            }
+        </div>
+    }
+}
+
   </div>
 </div>
 

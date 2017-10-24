@@ -11,7 +11,7 @@ using System;
 namespace Mnema.Migrations
 {
     [DbContext(typeof(UserContext))]
-    [Migration("20171023093537_InitialCreate")]
+    [Migration("20171024080158_InitialCreate")]
     partial class InitialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

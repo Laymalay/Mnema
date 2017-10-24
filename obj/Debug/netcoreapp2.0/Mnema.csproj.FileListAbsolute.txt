@@ -8,3 +8,13 @@
 /Users/alina/Mnema/bin/Debug/netcoreapp2.0/Mnema.pdb
 /Users/alina/Mnema/obj/Debug/netcoreapp2.0/Mnema.dll
 /Users/alina/Mnema/obj/Debug/netcoreapp2.0/Mnema.pdb
+/home/period-dev/Mnema/bin/Debug/netcoreapp2.0/Mnema.deps.json
+/home/period-dev/Mnema/bin/Debug/netcoreapp2.0/Mnema.runtimeconfig.json
+/home/period-dev/Mnema/bin/Debug/netcoreapp2.0/Mnema.runtimeconfig.dev.json
+/home/period-dev/Mnema/bin/Debug/netcoreapp2.0/Mnema.dll
+/home/period-dev/Mnema/bin/Debug/netcoreapp2.0/Mnema.pdb
+/home/period-dev/Mnema/obj/Debug/netcoreapp2.0/Mnema.csproj.CoreCompileInputs.cache
+/home/period-dev/Mnema/obj/Debug/netcoreapp2.0/Mnema.AssemblyInfoInputs.cache
+/home/period-dev/Mnema/obj/Debug/netcoreapp2.0/Mnema.AssemblyInfo.cs
+/home/period-dev/Mnema/obj/Debug/netcoreapp2.0/Mnema.dll
+/home/period-dev/Mnema/obj/Debug/netcoreapp2.0/Mnema.pdb
