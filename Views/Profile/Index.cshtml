@@ -13,8 +13,7 @@
 <a asp-area="" asp-controller="Account" asp-action="Logout">Logout</a> <br>
 <a asp-area="" asp-controller="Profile" asp-action="UploadPhoto">Upload Photo</a> <br>
 <a asp-area="" asp-controller="Profile" asp-action="DeleteProfileAsync">Delete profile</a> <br>
-
-
+<a asp-area="" asp-controller="Profile" asp-action="EditProfile" asp-route-userid="@Model.UserId">Edit profile</a> <br>
 
 <h3>My photos</h3>
 @Html.Partial("ShowPhoto", Model.Photos)

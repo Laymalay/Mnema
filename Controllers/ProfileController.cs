@@ -39,6 +39,20 @@ namespace Mnema.Controllers
             return View(user);
         }
 
+        [HttpPost]
+         public IActionResult DeletePhoto(int? id)
+        {
+            if (id != null)
+            {
+                Photo photo = _context.Photos.FirstOrDefault(p => p.PhotoId== id);
+                if (photo != null)
+                    _context.Photos.Remove(photo);
+                    _context.SaveChanges();
+                    return RedirectToAction("Index", "Profile");
+            }
+            return NotFound();
+        }
+
          public async Task<IActionResult> DeleteProfileAsync()
         {
             var user = await _context.Users.Include("Photos").FirstOrDefaultAsync(u => u.Email == User.Identity.Name );
@@ -78,18 +92,37 @@ namespace Mnema.Controllers
                 var photo = new Photo { Name = model.uploadedFile.FileName,
                                         Path = path ,
                                         Description = model.Description };
-                Console.WriteLine(photo.Name, photo.Path, photo.Description,photo.UserId, photo.User);
+                photo.User = user;
                 user.Photos.Add(photo);
                 _context.Photos.Add(photo);
                 _context.SaveChanges();
-                // foreach(Photo p in user.Photos)
-                //     Console.WriteLine("photo:" + p.Name + p.Path);
-                Console.WriteLine(user.Photos.Count());
                 }
 
 
             return RedirectToAction("Index", "Profile");
 
+        }
+
+
+        public async Task<IActionResult> EditProfile(int? userid)
+        {
+            if(userid!=null)
+            {
+                User user = await _context.Users.FirstAsync(u=>u.UserId==userid);
+                if (user != null)
+                    return View(user);
+            }
+            return NotFound();
+        }
+        [HttpPost]
+        public async Task<IActionResult> EditProfile(User user)
+        {
+            if (user.Avatar != null)
+                 Console.WriteLine("not null");
+            System.Console.WriteLine(user.UserId);
+            _context.Users.Update(user);
+            await _context.SaveChangesAsync();
+            return RedirectToAction("Index", "Profile");
         }
     }
 }

@@ -5,6 +5,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using AuthApp.Models;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Mnema.Models;
 
 namespace Mnema.Controllers
@@ -19,7 +20,8 @@ namespace Mnema.Controllers
 
         public IActionResult Index()
         {
-            return View(db.Users.ToList());
+            var users = db.Users.Include("Photos");
+            return View(users.ToList());
         }
 
 

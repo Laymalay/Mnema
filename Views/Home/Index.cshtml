@@ -17,6 +17,10 @@
                 <td>@user.Name</td>
                 <td>@user.Password</td>
                 <td>@user.Email</td>
+                <td>@user.UserId</td>
+                @if(@user.Photos!=null){
+                    <td>@user.Photos.Count()</td>
+                }
             </tr>
         }
     </table>
